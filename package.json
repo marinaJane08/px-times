@@ -1,0 +1,55 @@
+{
+	"name": "px-times",
+	"displayName": "px-times",
+	"description": "px times",
+	"version": "1.0.0",
+	"publisher":"marina",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+        "Formatters",
+        "Snippets",
+        "Other"
+    ],"keywords": [
+        "px",
+        "px times"
+    ],
+    "icon": "img/logo.png",
+	"activationEvents": [
+        "onCommand:extension.pxTimes"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"configuration":{
+            "title": "Px times configuration",
+            "properties": {
+                "px-times.time": {
+                    "type": "integer",
+                    "default": 2,
+                    "description": "time"
+                }
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.pxTimes",
+				"title": "Px times."
+			}
+		],
+		"keybindings": [
+            {"command": "extension.pxTimes","key": "Alt+x"}
+        ]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
