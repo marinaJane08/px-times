@@ -12,7 +12,7 @@ exports.activate = activate;
 
 function pxTimes(px, time) {
     if (time == 0) { return 0; }
-    const value = px * time;
+    const value = Math.round(px * time);
     return value;
 }
 
